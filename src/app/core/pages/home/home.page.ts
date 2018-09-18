@@ -19,6 +19,11 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
+
+    console.log("It is Home page");
+    console.error("It mabe have a Home page error");
+      console.error("It mabe have Home page warning");
+
     this.heroService.getHeroes().subscribe((heroes) => {
       this.heroes = heroes.sort((a, b) => {
         return b.likes - a.likes;
@@ -40,6 +45,9 @@ export class HomePage implements OnInit {
   seeHeroDetails(hero): void {
     if (hero.default) {
       this.router.navigate([AppConfig.routes.heroes + '/' + hero.id]);
+      console.log("See Hero detail");
+      console.error("It mabe have error");
+      console.error("It mabe have warning");
     }
   }
 }
